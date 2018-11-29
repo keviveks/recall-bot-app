@@ -22,7 +22,7 @@ export default class MyMenu extends Component {
 			<Menu
 				ref={(ref) => (this._menu = ref)}
 				button={
-					<Icon name="md-more" color="#fff" size={25} onPress={this.showMenu} style={{ marginRight: 10 }} />
+					<Icon name="md-more" color="#fff" size={25} onPress={this.showMenu} style={{ marginRight: 20 }} />
 				}
 			>
 				<MenuItem onPress={() => this.navigateScreen('Settings')}>Settings</MenuItem>
