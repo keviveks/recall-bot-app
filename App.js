@@ -1,11 +1,12 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { Home, Settings, CallRecordedList } from './src';
+import { Home, Settings, CallRecordedList, About } from './src';
 
 const AppNavigator = createStackNavigator(
 	{
 		Home,
 		Settings,
-		CallRecordedList
+		CallRecordedList,
+		About
 	},
 	{
 		initialRouteName: 'Home'

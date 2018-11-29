@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, TouchableOpacity } from 'react-native';
 import MyMenu from './MyMenu';
-import { LOGO } from '../images';
+import { CALL } from '../images';
 export default class HomeScreen extends React.Component {
 	static navigationOptions = ({ navigation }) => ({
 		title: 'Recall',
@@ -22,9 +22,12 @@ export default class HomeScreen extends React.Component {
 	};
 
 	render() {
+		const { navigation: { navigate } } = this.props;
 		return (
 			<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-				<Image source={LOGO} />
+				<TouchableOpacity style={{ opacity: 1 }} onPress={() => navigate('CallRecordedList')}>
+					<Image source={CALL} style={{ width: 200, height: 200 }} />
+				</TouchableOpacity>
 			</View>
 		);
 	}

@@ -27,6 +27,7 @@ export default class MyMenu extends Component {
 			>
 				<MenuItem onPress={() => this.navigateScreen('Settings')}>Settings</MenuItem>
 				<MenuItem onPress={() => this.navigateScreen('CallRecordedList')}>List</MenuItem>
+				<MenuItem onPress={() => this.navigateScreen('About')}>About</MenuItem>
 			</Menu>
 		);
 	}
