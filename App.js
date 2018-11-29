@@ -1,5 +1,4 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-
 import { Home, Settings, CallRecordedList } from './src';
 
 const AppNavigator = createStackNavigator(

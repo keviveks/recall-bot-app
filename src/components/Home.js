@@ -1,10 +1,8 @@
 import React from 'react';
-import { View, Text, Button, Switch } from 'react-native';
-
+import { View, Image } from 'react-native';
+import MyMenu from './MyMenu';
+import { LOGO } from '../images';
 export default class HomeScreen extends React.Component {
-	state = {
-		sw: false
-	};
 	static navigationOptions = {
 		title: 'Recall',
 		headerStyle: {
@@ -15,19 +13,19 @@ export default class HomeScreen extends React.Component {
 			fontWeight: 'bold'
 		}
 	};
+
 	changeVal = (val) => {
-		//console.log('SWITCH VALUE IS::', val);
 		this.setState({
 			sw: val
 		});
 	};
+
 	render() {
+		const { navigation: { navigate } } = this.props;
 		return (
 			<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-				<Text>Home Screen</Text>
-				<Button title="Go to Settings" onPress={() => this.props.navigation.navigate('Settings')} />
-				<Button title="Go to List" onPress={() => this.props.navigation.navigate('CallRecordedList')} />
-				<Switch value={this.state.sw} thumbColor="#019ae8" onValueChange={this.changeVal} />
+				<Image source={LOGO} />
+				<MyMenu navigate={navigate} />
 			</View>
 		);
 	}
