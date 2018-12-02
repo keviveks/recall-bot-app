@@ -4,12 +4,6 @@ import ScreenNavigation from './ScreenNavigation';
 import { CALL } from '../images';
 
 export default class HomeScreen extends React.Component {
-	changeVal = (val) => {
-		this.setState({
-			sw: val
-		});
-	};
-
 	render() {
 		const { navigation: { navigate } } = this.props;
 		return (
