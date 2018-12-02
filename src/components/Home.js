@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, Image, TouchableOpacity } from 'react-native';
-import MyMenu from './MyMenu';
+import ScreenNavigation from './ScreenNavigation';
 import { CALL } from '../images';
+
 export default class HomeScreen extends React.Component {
 	static navigationOptions = ({ navigation }) => ({
 		title: 'Recall',
-		headerRight: <MyMenu navigate={navigation.navigate} />,
+		headerRight: <ScreenNavigation navigate={navigation.navigate} />,
 		headerStyle: {
 			backgroundColor: '#019ae8'
 		},
