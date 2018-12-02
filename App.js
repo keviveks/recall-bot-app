@@ -19,10 +19,17 @@ const AppNavigator = createStackNavigator(
 				fontWeight: 'bold'
 			}
 		}
-	},
-	{
-		initialRouteName: 'Home'
 	}
 );
+
+// AppNavigator.navigationOptions = ({ navigation }) => {
+// 	debugger;
+// 	const { routeName } = navigation.state;
+// 	return {
+// 		tabBarLabel: 'Home!',
+// 		title: 'Call Records',
+// 		headerRight: <ScreenNavigation routeName={routeName} navigate={navigation.navigate} />
+// 	};
+// };
 
 export default createAppContainer(AppNavigator);
