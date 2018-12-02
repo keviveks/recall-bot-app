@@ -1,16 +1,17 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import ScreenNavigation from './ScreenNavigation';
+import { LOGO } from '../images';
 
-export default class About extends React.Component {
-	render() {
-		return (
-			<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-				<Text>About Screen</Text>
-			</View>
-		);
-	}
-}
+const About = () => (
+	<View style={{ backgroundColor: '#f4f4f4', flex: 1, alignItems: 'center', paddingTop: 30 }}>
+		<Image source={LOGO} style={{ width: 200, height: 200 }} />
+		<Text>Recall: A real android supported answering machine. Support Us continuing development.</Text>
+		<Text>Email: comingsoon</Text>
+		<Text>Website: comingsoon (for more info)</Text>
+		<Text>Version: 0.0.1</Text>
+	</View>
+);
 
 About.navigationOptions = ({ navigation }) => {
 	const { routeName } = navigation.state;
@@ -19,3 +20,5 @@ About.navigationOptions = ({ navigation }) => {
 		headerRight: <ScreenNavigation routeName={routeName} navigate={navigation.navigate} />
 	};
 };
+
+export default About;
