@@ -1,17 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import ScreenNavigation from './ScreenNavigation';
 
 export default class CallRecordedList extends React.Component {
-	static navigationOptions = {
-		title: 'Call Records',
-		headerStyle: {
-			backgroundColor: '#019ae8'
-		},
-		headerTintColor: '#fff',
-		headerTitleStyle: {
-			fontWeight: 'bold'
-		}
-	};
 	render() {
 		return (
 			<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -20,3 +11,11 @@ export default class CallRecordedList extends React.Component {
 		);
 	}
 }
+
+CallRecordedList.navigationOptions = ({ navigation }) => {
+	const { routeName } = navigation.state;
+	return {
+		title: 'Call Records',
+		headerRight: <ScreenNavigation routeName={routeName} navigate={navigation.navigate} />
+	};
+};

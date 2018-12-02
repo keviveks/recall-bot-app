@@ -1,5 +1,5 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { Home, Settings, CallRecordedList, About } from './src';
+import { Home, Settings, CallRecordedList, About, ScreenNavigation } from './src';
 
 const AppNavigator = createStackNavigator(
 	{
@@ -7,6 +7,18 @@ const AppNavigator = createStackNavigator(
 		Settings,
 		CallRecordedList,
 		About
+	},
+	{
+		defaultNavigationOptions: {
+			title: 'Recall',
+			headerStyle: {
+				backgroundColor: '#019ae8'
+			},
+			headerTintColor: '#fff',
+			headerTitleStyle: {
+				fontWeight: 'bold'
+			}
+		}
 	},
 	{
 		initialRouteName: 'Home'

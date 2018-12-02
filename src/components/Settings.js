@@ -1,17 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import ScreenNavigation from './ScreenNavigation';
 
 export default class Settings extends React.Component {
-	static navigationOptions = {
-		title: 'Settings',
-		headerStyle: {
-			backgroundColor: '#019ae8'
-		},
-		headerTintColor: '#fff',
-		headerTitleStyle: {
-			fontWeight: 'bold'
-		}
-	};
 	render() {
 		return (
 			<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -20,3 +11,11 @@ export default class Settings extends React.Component {
 		);
 	}
 }
+
+Settings.navigationOptions = ({ navigation }) => {
+	const { routeName } = navigation.state;
+	return {
+		title: 'Settings',
+		headerRight: <ScreenNavigation routeName={routeName} navigate={navigation.navigate} />
+	};
+};

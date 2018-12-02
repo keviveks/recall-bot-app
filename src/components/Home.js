@@ -4,18 +4,6 @@ import ScreenNavigation from './ScreenNavigation';
 import { CALL } from '../images';
 
 export default class HomeScreen extends React.Component {
-	static navigationOptions = ({ navigation }) => ({
-		title: 'Recall',
-		headerRight: <ScreenNavigation navigate={navigation.navigate} />,
-		headerStyle: {
-			backgroundColor: '#019ae8'
-		},
-		headerTintColor: '#fff',
-		headerTitleStyle: {
-			fontWeight: 'bold'
-		}
-	});
-
 	changeVal = (val) => {
 		this.setState({
 			sw: val
@@ -33,3 +21,7 @@ export default class HomeScreen extends React.Component {
 		);
 	}
 }
+
+HomeScreen.navigationOptions = ({ navigation }) => ({
+	headerRight: <ScreenNavigation navigate={navigation.navigate} />
+});

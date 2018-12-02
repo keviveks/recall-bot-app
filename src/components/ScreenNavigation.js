@@ -18,6 +18,7 @@ export default class ScreenNavigation extends Component {
 	};
 
 	render() {
+		const { routeName } = this.props;
 		return (
 			<Menu
 				ref={(ref) => (this._menu = ref)}
@@ -31,9 +32,13 @@ export default class ScreenNavigation extends Component {
 					/>
 				}
 			>
-				<MenuItem onPress={() => this.navigateScreen('Settings')}>Settings</MenuItem>
-				<MenuItem onPress={() => this.navigateScreen('CallRecordedList')}>List</MenuItem>
-				<MenuItem onPress={() => this.navigateScreen('About')}>About</MenuItem>
+				{routeName != 'Settings' && (
+					<MenuItem onPress={() => this.navigateScreen('Settings')}>Settings</MenuItem>
+				)}
+				{routeName != 'CallRecordedList' && (
+					<MenuItem onPress={() => this.navigateScreen('CallRecordedList')}>List</MenuItem>
+				)}
+				{routeName !== 'About' && <MenuItem onPress={() => this.navigateScreen('About')}>About</MenuItem>}
 			</Menu>
 		);
 	}
