@@ -1,5 +1,5 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { Home, Settings, CallRecordedList, About, ScreenNavigation } from './components';
+import { Home, Settings, CallRecordedList, About } from './components';
 
 const AppNavigator = createStackNavigator(
 	{
@@ -21,15 +21,5 @@ const AppNavigator = createStackNavigator(
 		}
 	}
 );
-
-// AppNavigator.navigationOptions = ({ navigation }) => {
-// 	debugger;
-// 	const { routeName } = navigation.state;
-// 	return {
-// 		tabBarLabel: 'Home!',
-// 		title: 'Call Records',
-// 		headerRight: <ScreenNavigation routeName={routeName} navigate={navigation.navigate} />
-// 	};
-// };
 
 export default createAppContainer(AppNavigator);
