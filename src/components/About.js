@@ -17,12 +17,9 @@ const About = () => (
 	</View>
 );
 
-About.navigationOptions = ({ navigation }) => {
-	const { routeName } = navigation.state;
-	return {
-		title: 'About Recall',
-		headerRight: <ScreenNavigation routeName={routeName} navigate={navigation.navigate} />
-	};
+About.navigationOptions = {
+	title: 'About Recall',
+	headerRight: <ScreenNavigation />
 };
 
 export default About;

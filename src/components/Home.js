@@ -39,6 +39,6 @@ export default class HomeScreen extends Component {
 	}
 }
 
-HomeScreen.navigationOptions = ({ navigation }) => ({
-	headerRight: <ScreenNavigation navigate={navigation.navigate} />
-});
+HomeScreen.navigationOptions = {
+	headerRight: <ScreenNavigation />
+};

@@ -7,6 +7,7 @@ export default class Settings extends Component {
 	state = {
 		appEnable: 'false'
 	};
+
 	toggleApp = (val) => {
 		AsyncStorage.setItem('AppEnable', JSON.stringify(val), () => {
 			AsyncStorage.getItem('AppEnable', (err, result) => {
@@ -38,10 +39,7 @@ export default class Settings extends Component {
 	}
 }
 
-Settings.navigationOptions = ({ navigation }) => {
-	const { routeName } = navigation.state;
-	return {
-		title: 'Settings',
-		headerRight: <ScreenNavigation routeName={routeName} navigate={navigation.navigate} />
-	};
+Settings.navigationOptions = {
+	title: 'Settings',
+	headerRight: <ScreenNavigation />
 };

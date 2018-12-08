@@ -13,10 +13,7 @@ export default class CallRecordedList extends Component {
 	}
 }
 
-CallRecordedList.navigationOptions = ({ navigation }) => {
-	const { routeName } = navigation.state;
-	return {
-		title: 'Call Records',
-		headerRight: <ScreenNavigation routeName={routeName} navigate={navigation.navigate} />
-	};
+CallRecordedList.navigationOptions = {
+	title: 'Call Records',
+	headerRight: <ScreenNavigation />
 };

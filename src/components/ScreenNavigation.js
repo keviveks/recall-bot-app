@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
+import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export default class ScreenNavigation extends Component {
+class ScreenNavigation extends Component {
 	hideMenu = () => {
 		this._menu.hide();
 	};
@@ -12,12 +13,12 @@ export default class ScreenNavigation extends Component {
 	};
 
 	navigateScreen = (screenName) => {
-		this.props.navigate(screenName);
+		this.props.navigation.navigate(screenName);
 		this.hideMenu();
 	};
 
 	render() {
-		const { routeName } = this.props;
+		const { routeName } = this.props.navigation.state;
 		return (
 			<Menu
 				ref={(ref) => (this._menu = ref)}
@@ -42,3 +43,4 @@ export default class ScreenNavigation extends Component {
 		);
 	}
 }
+export default withNavigation(ScreenNavigation);
