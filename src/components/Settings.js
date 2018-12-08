@@ -5,7 +5,7 @@ import { styles } from './Styles';
 
 class Settings extends Component {
 	render() {
-		console.log('Prop data:', this.props);
+		//console.log('Prop data:', this.props);
 		const { appStatus, enableDisableApp } = this.props;
 		return (
 			<View style={styles.container}>
@@ -17,3 +17,12 @@ class Settings extends Component {
 }
 
 export default ParentConsumer(Settings);
+
+// usefull tip
+// const BindSettings = ParentConsumer(Settings);
+
+// BindSettings.navigationOptions = {
+// 	title: 'Default Title'
+// };
+
+// export default BindSettings;
