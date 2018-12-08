@@ -5,12 +5,36 @@ import { ParentProvider, Home, Settings, CallRecordedList, About, ScreenNavigati
 
 const AppNavigator = createStackNavigator(
 	{
-		Home,
-		Settings,
-		CallRecordedList,
-		About
+		Home: {
+			screen: Home
+		},
+		Settings: {
+			screen: Settings,
+			navigationOptions: {
+				title: 'Settings'
+			}
+		},
+		CallRecordedList: {
+			screen: CallRecordedList,
+			navigationOptions: {
+				title: 'Call Record List'
+			}
+		},
+		About: {
+			screen: About,
+			navigationOptions: {
+				title: 'About Recall'
+			}
+		}
 	},
+	// {
+	// 	Home,
+	// 	Settings,
+	// 	CallRecordedList,
+	// 	About
+	// },
 	{
+		initialRouteName: 'Home',
 		defaultNavigationOptions: {
 			title: 'Recall',
 			headerStyle: {

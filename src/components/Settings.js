@@ -5,6 +5,7 @@ import { styles } from './Styles';
 
 class Settings extends Component {
 	render() {
+		console.log('Prop data:', this.props);
 		const { appStatus, enableDisableApp } = this.props;
 		return (
 			<View style={styles.container}>
