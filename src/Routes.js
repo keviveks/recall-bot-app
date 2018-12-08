@@ -1,5 +1,7 @@
+import React, { Component } from 'react';
+
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { Home, Settings, CallRecordedList, About } from './components';
+import { ParentProvider, Home, Settings, CallRecordedList, About, ScreenNavigation } from './components';
 
 const AppNavigator = createStackNavigator(
 	{
@@ -17,9 +19,20 @@ const AppNavigator = createStackNavigator(
 			headerTintColor: '#fff',
 			headerTitleStyle: {
 				fontWeight: 'bold'
-			}
+			},
+			headerRight: <ScreenNavigation />
 		}
 	}
 );
 
-export default createAppContainer(AppNavigator);
+const AppContainer = createAppContainer(AppNavigator);
+
+export default class App extends Component {
+	render() {
+		return (
+			<ParentProvider>
+				<AppContainer />
+			</ParentProvider>
+		);
+	}
+}

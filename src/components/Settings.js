@@ -1,45 +1,18 @@
 import React, { Component } from 'react';
-import { View, Text, Switch, AsyncStorage } from 'react-native';
-import ScreenNavigation from './ScreenNavigation';
+import { View, Text, Switch } from 'react-native';
+import { ParentConsumer } from './Provider';
 import { styles } from './Styles';
 
-export default class Settings extends Component {
-	state = {
-		appEnable: 'false'
-	};
-
-	toggleApp = (val) => {
-		AsyncStorage.setItem('AppEnable', JSON.stringify(val), () => {
-			AsyncStorage.getItem('AppEnable', (err, result) => {
-				//console.log(result);
-				this.setState({
-					appEnable: result
-				});
-			});
-		});
-	};
-
-	async componentDidMount() {
-		await AsyncStorage.getItem('AppEnable', (err, result) => {
-			//console.log(result);
-			this.setState({
-				appEnable: result
-			});
-		});
-	}
-
+class Settings extends Component {
 	render() {
-		const { appEnable } = this.state;
+		const { appStatus, enableDisableApp } = this.props;
 		return (
 			<View style={styles.container}>
 				<Text>Enable App::</Text>
-				<Switch value={appEnable === 'true' ? true : false} onValueChange={this.toggleApp} />
+				<Switch value={appStatus} onValueChange={(val) => enableDisableApp(val)} />
 			</View>
 		);
 	}
 }
 
-Settings.navigationOptions = {
-	title: 'Settings',
-	headerRight: <ScreenNavigation />
-};
+export default ParentConsumer(Settings);

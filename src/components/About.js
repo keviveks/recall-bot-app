@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import ScreenNavigation from './ScreenNavigation';
 import { LOGO } from '../images';
 import { styles } from './Styles';
 
@@ -16,10 +15,5 @@ const About = () => (
 		</View>
 	</View>
 );
-
-About.navigationOptions = {
-	title: 'About Recall',
-	headerRight: <ScreenNavigation />
-};
 
 export default About;
