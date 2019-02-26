@@ -4,6 +4,7 @@ import { ParentConsumer } from './Provider';
 import CallDetectorManager from 'react-native-call-detection';
 import { CALL } from '../images';
 import { styles } from './Styles';
+import InCallManager from 'react-native-incall-manager';
 
 class HomeScreen extends Component {
 	componentWillMount() {
@@ -21,6 +22,8 @@ class HomeScreen extends Component {
 					// Do something call got incoming
 					console.log('Incoming call detected');
 					alert('Detect Incoming');
+
+					//InCallManager.start({ media: 'audio', ringback: '_BUNDLE_' });
 				} else if (event === 'Dialing') {
 					// Do something call got dialing
 					// This clause will only be executed for iOS
@@ -32,11 +35,14 @@ class HomeScreen extends Component {
 					// This clause will only be executed for Android
 					console.log('Call receive');
 					alert('Detect call receive');
+
+					InCallManager.start({ media: 'audio', ringback: '_BUNDLE_' });
 				} else if (event === 'Missed') {
 					// Do something call got missed
 					// This clause will only be executed for Android
 					console.log('Missed call');
 					alert('Detect Miss call');
+					InCallManager.stop();
 				}
 			},
 			false, // if you want to read the phone number of the incoming call [ANDROID], otherwise false

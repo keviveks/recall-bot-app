@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-incall-manager')
     compile project(':react-native-call-detection')
     compile project(':react-native-vector-icons')
     compile project(':react-native-gesture-handler')
